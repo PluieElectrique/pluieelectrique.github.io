@@ -1,0 +1,10 @@
+{
+  "name": "An Empty Village",
+  "description": "Game Boy port of a PICO-8 game.",
+  "launch_path": "/index.html",
+  "fullscreen": true,
+  "icons": {
+    "128": "/images/128.png"
+  },
+  "orientation": ["portrait-primary"]
+}
