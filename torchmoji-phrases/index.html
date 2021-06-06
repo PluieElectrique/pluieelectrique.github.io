@@ -16,10 +16,10 @@ code { padding: 0.2em 0.4em; margin: 0; font-size: 85%; border-radius: 6px; }
 @media (prefers-color-scheme: light) { body { background-color: #f9f9f9; color: #1a1a1a; } code { background-color: #dedede; } }
 @media (prefers-color-scheme: dark)  { body { background-color: #232323; color: #eaeaea; } a { color: #adadff; } code { background-color: #444; }}
 
-a .emoji, td .emoji { display: inline-block; width: 1.5em; text-align: center; }
-h3 a, #emoji-toc a  { text-decoration: none; color: inherit; }
-#emoji-toc a        { font-size: 1.75em; }
-#emoji-toc ~ hr     { margin-bottom: 2em; }
+a .emoji, td .emoji      { display: inline-block; width: 1.5em; text-align: center; }
+h3 a, #emoji-toc a, td a { text-decoration: none; color: inherit; }
+#emoji-toc a             { font-size: 1.75em; }
+#emoji-toc ~ hr          { margin-bottom: 2em; }
 
 button        { opacity: 0; height: 2em; }
 button img    { width: 1em; }
@@ -52,397 +52,398 @@ th.sort-desc:after { content: " ▾"; position: absolute; padding-left: 3px; }
     <p>These phrases were designed for compatibility with <a href="https://15.ai/">15.ai</a>'s emotional contextualizers. So, any token with disallowed characters was excluded (e.g. hashtags were excluded because <code>#</code> is not allowed). Similarly, 15.ai has a character limit of 200, so phrases were limited to 30 characters at most.</p>
     <p>The <code>CUSTOM_UNKNOWN</code> and <code>CUSTOM_URL</code> tokens were arbitrarily chosen to be <code>zq</code> and <code>www.w</code>. The other custom tokens were excluded due to character restrictions.</p>
     <p>The phrases were found by hill climbing, brute force, and heuristics (e.g. repeating the same word many times). There is definitely room for improvement with better strategies.</p>
-    <p>The exact emojis and shortcodes used mostly follow TorchMoji's <a href="https://github.com/huggingface/torchMoji/blob/198f7d4e0711a7d3cd01968812af0121c54477f8/examples/text_emojize.py#L20-L32"><code>text_emojize.py</code></a> example, but some of the shortcodes are wrong (e.g. <code>:musical_note:</code> is actually <code>:headphone:</code>). In those cases, the <a href="https://github.com/bfelbo/DeepMoji/blob/master/emoji_unicode.csv">original DeepMoji codepoints</a> are used instead. If the original codepoint is not a color emoji, then a similar looking color emoji is used instead (e.g. the white heart emoji <span class="emoji" role="img" aria-label=":white_heart:">🤍</span> is used instead of the white heart suit ♡).</p>
+    <p>The exact emojis and shortcodes used mostly follow TorchMoji's <a href="https://github.com/huggingface/torchMoji/blob/198f7d4e0711a7d3cd01968812af0121c54477f8/examples/text_emojize.py#L20-L32"><code>text_emojize.py</code></a> example, but some of the shortcodes are wrong (e.g. <code>:musical_note:</code> should actually be <code>:headphone:</code>). In those cases, the <a href="https://github.com/bfelbo/DeepMoji/blob/master/emoji_unicode.csv">original DeepMoji codepoints</a> are used instead. If the original codepoint is not a color emoji, then a similar looking color emoji is used instead (e.g. the white heart emoji <span class="emoji" role="img" aria-label=":white_heart:">🤍</span> is used instead of the white heart suit character ♡).</p>
     <h2 id="top-phrases">Top phrases</h2>
+    <p>Click any emoji to jump to its top 10 phrases table.</p>
     <table>
         <thead><tr><th>Emoji</th><th class="sort-desc">Prob</th><th>Chars</th><th>Phrase</th></tr></thead>
         <tbody>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":blue_heart:">💙</span> :blue_heart:</td>
+                <td><a href="#blue_heart"><span class="emoji" role="img" aria-label=":blue_heart:">💙</span> :blue_heart:</a></td>
                 <td class="number">99.91%</td>
                 <td class="number">26</td>
                 <td>zq elf elf elf??elf elf zq</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":clap:">👏</span> :clap:</td>
+                <td><a href="#clap"><span class="emoji" role="img" aria-label=":clap:">👏</span> :clap:</a></td>
                 <td class="number">99.45%</td>
                 <td class="number">19</td>
                 <td>,aplausos aplausos,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":facepunch:">👊</span> :facepunch:</td>
+                <td><a href="#facepunch"><span class="emoji" role="img" aria-label=":facepunch:">👊</span> :facepunch:</a></td>
                 <td class="number">99.41%</td>
                 <td class="number">16</td>
                 <td>brofist!brofist,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":relaxed:">☺️</span> :relaxed:</td>
+                <td><a href="#relaxed"><span class="emoji" role="img" aria-label=":relaxed:">☺️</span> :relaxed:</a></td>
                 <td class="number">98.88%</td>
                 <td class="number">21</td>
                 <td>zq pfb!?? ??pfb pfb!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":skull:">💀</span> :skull:</td>
+                <td><a href="#skull"><span class="emoji" role="img" aria-label=":skull:">💀</span> :skull:</a></td>
                 <td class="number">98.75%</td>
                 <td class="number">17</td>
                 <td>!skulls!!skulls,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":heart_suit:">♥️</span> :heart_suit:</td>
+                <td><a href="#heart_suit"><span class="emoji" role="img" aria-label=":heart_suit:">♥️</span> :heart_suit:</a></td>
                 <td class="number">98.52%</td>
                 <td class="number">26</td>
                 <td>elf elf elf elf,,elf elf??</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":100:">💯</span> :100:</td>
+                <td><a href="#100"><span class="emoji" role="img" aria-label=":100:">💯</span> :100:</a></td>
                 <td class="number">98.44%</td>
                 <td class="number">14</td>
                 <td>i&#39;ll percent!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":gun:">🔫</span> :gun:</td>
+                <td><a href="#gun"><span class="emoji" role="img" aria-label=":gun:">🔫</span> :gun:</a></td>
                 <td class="number">98.23%</td>
                 <td class="number">16</td>
                 <td>gratata,gratata!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":v:">✌️</span> :v:</td>
+                <td><a href="#v"><span class="emoji" role="img" aria-label=":v:">✌️</span> :v:</a></td>
                 <td class="number">98.08%</td>
                 <td class="number">13</td>
                 <td>duces!duces,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":information_desk_person:">💁</span> :information_desk_person:</td>
+                <td><a href="#information_desk_person"><span class="emoji" role="img" aria-label=":information_desk_person:">💁</span> :information_desk_person:</a></td>
                 <td class="number">97.79%</td>
                 <td class="number">25</td>
                 <td>obvi obvi obvi,obvi obvi.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":purple_heart:">💜</span> :purple_heart:</td>
+                <td><a href="#purple_heart"><span class="emoji" role="img" aria-label=":purple_heart:">💜</span> :purple_heart:</a></td>
                 <td class="number">97.69%</td>
                 <td class="number">18</td>
                 <td>!lsu!lsu!!lsu lsu!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":muscle:">💪</span> :muscle:</td>
+                <td><a href="#muscle"><span class="emoji" role="img" aria-label=":muscle:">💪</span> :muscle:</a></td>
                 <td class="number">97.62%</td>
                 <td class="number">14</td>
                 <td>lukey muscles.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":smiling_imp:">😈</span> :smiling_imp:</td>
+                <td><a href="#smiling_imp"><span class="emoji" role="img" aria-label=":smiling_imp:">😈</span> :smiling_imp:</a></td>
                 <td class="number">96.93%</td>
                 <td class="number">15</td>
                 <td>devilish idols,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sparkles:">✨</span> :sparkles:</td>
+                <td><a href="#sparkles"><span class="emoji" role="img" aria-label=":sparkles:">✨</span> :sparkles:</a></td>
                 <td class="number">96.72%</td>
                 <td class="number">28</td>
                 <td>sparkles sparkles sparkles,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":eyes:">👀</span> :eyes:</td>
+                <td><a href="#eyes"><span class="emoji" role="img" aria-label=":eyes:">👀</span> :eyes:</a></td>
                 <td class="number">96.64%</td>
                 <td class="number">22</td>
                 <td>peepin!peepin peepin..</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":stuck_out_tongue_winking_eye:">😜</span> :stuck_out_tongue_winking_eye:</td>
+                <td><a href="#stuck_out_tongue_winking_eye"><span class="emoji" role="img" aria-label=":stuck_out_tongue_winking_eye:">😜</span> :stuck_out_tongue_winking_eye:</a></td>
                 <td class="number">96.41%</td>
                 <td class="number">20</td>
                 <td>newsflash,newsflash!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sunglasses:">😎</span> :sunglasses:</td>
+                <td><a href="#sunglasses"><span class="emoji" role="img" aria-label=":sunglasses:">😎</span> :sunglasses:</a></td>
                 <td class="number">96.21%</td>
                 <td class="number">17</td>
                 <td>?shades..shades,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":mask:">😷</span> :mask:</td>
+                <td><a href="#mask"><span class="emoji" role="img" aria-label=":mask:">😷</span> :mask:</a></td>
                 <td class="number">95.96%</td>
                 <td class="number">10</td>
                 <td>many boke.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":pray:">🙏</span> :pray:</td>
+                <td><a href="#pray"><span class="emoji" role="img" aria-label=":pray:">🙏</span> :pray:</a></td>
                 <td class="number">95.84%</td>
                 <td class="number">11</td>
                 <td>prayin beg!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":hand:">✋</span> :hand:</td>
+                <td><a href="#hand"><span class="emoji" role="img" aria-label=":hand:">✋</span> :hand:</a></td>
                 <td class="number">94.87%</td>
                 <td class="number">15</td>
                 <td>? ??hand,! !!,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":relieved:">😌</span> :relieved:</td>
+                <td><a href="#relieved"><span class="emoji" role="img" aria-label=":relieved:">😌</span> :relieved:</a></td>
                 <td class="number">91.28%</td>
                 <td class="number">14</td>
                 <td>it&#39;d soothing,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":broken_heart:">💔</span> :broken_heart:</td>
+                <td><a href="#broken_heart"><span class="emoji" role="img" aria-label=":broken_heart:">💔</span> :broken_heart:</a></td>
                 <td class="number">90.87%</td>
                 <td class="number">16</td>
                 <td>? ? ??aray?aray,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sleeping:">😴</span> :sleeping:</td>
+                <td><a href="#sleeping"><span class="emoji" role="img" aria-label=":sleeping:">😴</span> :sleeping:</a></td>
                 <td class="number">89.73%</td>
                 <td class="number">18</td>
                 <td>!!soninho soninho!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":thumbsup:">👍</span> :thumbsup:</td>
+                <td><a href="#thumbsup"><span class="emoji" role="img" aria-label=":thumbsup:">👍</span> :thumbsup:</a></td>
                 <td class="number">88.82%</td>
                 <td class="number">10</td>
                 <td>thumbs up!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":speak_no_evil:">🙊</span> :speak_no_evil:</td>
+                <td><a href="#speak_no_evil"><span class="emoji" role="img" aria-label=":speak_no_evil:">🙊</span> :speak_no_evil:</a></td>
                 <td class="number">88.75%</td>
                 <td class="number">16</td>
                 <td>,pssy pssy!pssy!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":headphone:">🎧</span> :headphone:</td>
+                <td><a href="#headphone"><span class="emoji" role="img" aria-label=":headphone:">🎧</span> :headphone:</a></td>
                 <td class="number">88.59%</td>
                 <td class="number">16</td>
                 <td>headphones flow!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":wink:">😉</span> :wink:</td>
+                <td><a href="#wink"><span class="emoji" role="img" aria-label=":wink:">😉</span> :wink:</a></td>
                 <td class="number">87.56%</td>
                 <td class="number">10</td>
                 <td>than wink,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":no_good:">🙅</span> :no_good:</td>
+                <td><a href="#no_good"><span class="emoji" role="img" aria-label=":no_good:">🙅</span> :no_good:</a></td>
                 <td class="number">86.59%</td>
                 <td class="number">17</td>
                 <td>it&#39;d shapes www.w</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":heart:">❤️</span> :heart:</td>
+                <td><a href="#heart"><span class="emoji" role="img" aria-label=":heart:">❤️</span> :heart:</a></td>
                 <td class="number">82.95%</td>
                 <td class="number">22</td>
                 <td>it&#39;d colombian always,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":triumph:">😤</span> :triumph:</td>
+                <td><a href="#triumph"><span class="emoji" role="img" aria-label=":triumph:">😤</span> :triumph:</a></td>
                 <td class="number">82.20%</td>
                 <td class="number">23</td>
                 <td>smokin fucking inhale!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":smile:">😄</span> :smile:</td>
+                <td><a href="#smile"><span class="emoji" role="img" aria-label=":smile:">😄</span> :smile:</a></td>
                 <td class="number">79.95%</td>
                 <td class="number">24</td>
                 <td>cheesin rofl hilarious,,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":two_hearts:">💕</span> :two_hearts:</td>
+                <td><a href="#two_hearts"><span class="emoji" role="img" aria-label=":two_hearts:">💕</span> :two_hearts:</a></td>
                 <td class="number">79.94%</td>
                 <td class="number">23</td>
                 <td>it&#39;d melanie sunshines,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sparkling_heart:">💖</span> :sparkling_heart:</td>
+                <td><a href="#sparkling_heart"><span class="emoji" role="img" aria-label=":sparkling_heart:">💖</span> :sparkling_heart:</a></td>
                 <td class="number">79.41%</td>
                 <td class="number">20</td>
                 <td>lukey suicide lysm!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":raised_hands:">🙌</span> :raised_hands:</td>
+                <td><a href="#raised_hands"><span class="emoji" role="img" aria-label=":raised_hands:">🙌</span> :raised_hands:</a></td>
                 <td class="number">79.30%</td>
                 <td class="number">15</td>
                 <td>!!?hov!hov!hov!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":blush:">😊</span> :blush:</td>
+                <td><a href="#blush"><span class="emoji" role="img" aria-label=":blush:">😊</span> :blush:</a></td>
                 <td class="number">78.50%</td>
                 <td class="number">23</td>
                 <td>it&#39;d moonlight bullets.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":rage:">😡</span> :rage:</td>
+                <td><a href="#rage"><span class="emoji" role="img" aria-label=":rage:">😡</span> :rage:</a></td>
                 <td class="number">78.01%</td>
                 <td class="number">21</td>
                 <td>clifford hard fuming.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":flushed:">😳</span> :flushed:</td>
+                <td><a href="#flushed"><span class="emoji" role="img" aria-label=":flushed:">😳</span> :flushed:</a></td>
                 <td class="number">77.69%</td>
                 <td class="number">22</td>
                 <td>wuut wuut wuut alike..</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":heart_eyes:">😍</span> :heart_eyes:</td>
+                <td><a href="#heart_eyes"><span class="emoji" role="img" aria-label=":heart_eyes:">😍</span> :heart_eyes:</a></td>
                 <td class="number">77.57%</td>
                 <td class="number">20</td>
                 <td>iloveyousomuch gawd,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":grin:">😁</span> :grin:</td>
+                <td><a href="#grin"><span class="emoji" role="img" aria-label=":grin:">😁</span> :grin:</a></td>
                 <td class="number">77.57%</td>
                 <td class="number">18</td>
                 <td>it&#39;d cheesing as!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":yum:">😋</span> :yum:</td>
+                <td><a href="#yum"><span class="emoji" role="img" aria-label=":yum:">😋</span> :yum:</a></td>
                 <td class="number">76.69%</td>
                 <td class="number">7</td>
                 <td>yumm x.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":notes:">🎶</span> :notes:</td>
+                <td><a href="#notes"><span class="emoji" role="img" aria-label=":notes:">🎶</span> :notes:</a></td>
                 <td class="number">76.48%</td>
                 <td class="number">21</td>
                 <td>?tumba tumba tumba zq</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sweat_smile:">😅</span> :sweat_smile:</td>
+                <td><a href="#sweat_smile"><span class="emoji" role="img" aria-label=":sweat_smile:">😅</span> :sweat_smile:</a></td>
                 <td class="number">75.39%</td>
                 <td class="number">18</td>
                 <td>it&#39;d sweatin even,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":cry:">😢</span> :cry:</td>
+                <td><a href="#cry"><span class="emoji" role="img" aria-label=":cry:">😢</span> :cry:</a></td>
                 <td class="number">75.28%</td>
                 <td class="number">18</td>
                 <td>sedih expect it&#39;d!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":see_no_evil:">🙈</span> :see_no_evil:</td>
+                <td><a href="#see_no_evil"><span class="emoji" role="img" aria-label=":see_no_evil:">🙈</span> :see_no_evil:</a></td>
                 <td class="number">74.77%</td>
                 <td class="number">25</td>
                 <td>peek embarrassing hide zq</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":smirk:">😏</span> :smirk:</td>
+                <td><a href="#smirk"><span class="emoji" role="img" aria-label=":smirk:">😏</span> :smirk:</a></td>
                 <td class="number">74.53%</td>
                 <td class="number">19</td>
                 <td>?smirk smirk smirk,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":ok_hand:">👌</span> :ok_hand:</td>
+                <td><a href="#ok_hand"><span class="emoji" role="img" aria-label=":ok_hand:">👌</span> :ok_hand:</a></td>
                 <td class="number">74.50%</td>
                 <td class="number">30</td>
                 <td>notch notch notch notch notch.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sleepy:">😪</span> :sleepy:</td>
+                <td><a href="#sleepy"><span class="emoji" role="img" aria-label=":sleepy:">😪</span> :sleepy:</a></td>
                 <td class="number">74.37%</td>
                 <td class="number">14</td>
                 <td>ngantuk horan,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":joy:">😂</span> :joy:</td>
+                <td><a href="#joy"><span class="emoji" role="img" aria-label=":joy:">😂</span> :joy:</a></td>
                 <td class="number">72.85%</td>
                 <td class="number">13</td>
                 <td>war risa pqp!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sweat:">😓</span> :sweat:</td>
+                <td><a href="#sweat"><span class="emoji" role="img" aria-label=":sweat:">😓</span> :sweat:</a></td>
                 <td class="number">72.55%</td>
                 <td class="number">16</td>
                 <td>sweatin heat! !!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":kissing_heart:">😘</span> :kissing_heart:</td>
+                <td><a href="#kissing_heart"><span class="emoji" role="img" aria-label=":kissing_heart:">😘</span> :kissing_heart:</a></td>
                 <td class="number">72.18%</td>
                 <td class="number">18</td>
                 <td>kisses you&#39;re mwa,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":white_heart:">🤍</span> :white_heart:</td>
+                <td><a href="#white_heart"><span class="emoji" role="img" aria-label=":white_heart:">🤍</span> :white_heart:</a></td>
                 <td class="number">71.65%</td>
                 <td class="number">12</td>
                 <td>kocham it&#39;d,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":confounded:">😖</span> :confounded:</td>
+                <td><a href="#confounded"><span class="emoji" role="img" aria-label=":confounded:">😖</span> :confounded:</a></td>
                 <td class="number">70.52%</td>
                 <td class="number">21</td>
                 <td>sour sour?!sour sour!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":grimacing:">😬</span> :grimacing:</td>
+                <td><a href="#grimacing"><span class="emoji" role="img" aria-label=":grimacing:">😬</span> :grimacing:</a></td>
                 <td class="number">69.45%</td>
                 <td class="number">18</td>
                 <td>teeth yikes spree!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":confused:">😕</span> :confused:</td>
+                <td><a href="#confused"><span class="emoji" role="img" aria-label=":confused:">😕</span> :confused:</a></td>
                 <td class="number">62.78%</td>
                 <td class="number">17</td>
                 <td>kinda bummer odd?</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":sob:">😭</span> :sob:</td>
+                <td><a href="#sob"><span class="emoji" role="img" aria-label=":sob:">😭</span> :sob:</a></td>
                 <td class="number">62.55%</td>
                 <td class="number">25</td>
                 <td>cryingg cryingg cryingg!!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":persevere:">😣</span> :persevere:</td>
+                <td><a href="#persevere"><span class="emoji" role="img" aria-label=":persevere:">😣</span> :persevere:</a></td>
                 <td class="number">60.16%</td>
                 <td class="number">19</td>
                 <td>!schoo schoo schoo,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":angry:">😠</span> :angry:</td>
+                <td><a href="#angry"><span class="emoji" role="img" aria-label=":angry:">😠</span> :angry:</a></td>
                 <td class="number">52.64%</td>
                 <td class="number">24</td>
                 <td>tomorrows bronca barbie,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":pensive:">😔</span> :pensive:</td>
+                <td><a href="#pensive"><span class="emoji" role="img" aria-label=":pensive:">😔</span> :pensive:</a></td>
                 <td class="number">48.41%</td>
                 <td class="number">19</td>
                 <td>it&#39;d bummed other..</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":expressionless:">😑</span> :expressionless:</td>
+                <td><a href="#expressionless"><span class="emoji" role="img" aria-label=":expressionless:">😑</span> :expressionless:</a></td>
                 <td class="number">44.22%</td>
                 <td class="number">12</td>
                 <td>stale dinah,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":unamused:">😒</span> :unamused:</td>
+                <td><a href="#unamused"><span class="emoji" role="img" aria-label=":unamused:">😒</span> :unamused:</a></td>
                 <td class="number">42.80%</td>
                 <td class="number">21</td>
                 <td>it&#39;d stingy nothing..</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":tired_face:">😫</span> :tired_face:</td>
+                <td><a href="#tired_face"><span class="emoji" role="img" aria-label=":tired_face:">😫</span> :tired_face:</a></td>
                 <td class="number">39.54%</td>
                 <td class="number">24</td>
                 <td>clifford starvingg whyy!</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":disappointed:">😞</span> :disappointed:</td>
+                <td><a href="#disappointed"><span class="emoji" role="img" aria-label=":disappointed:">😞</span> :disappointed:</a></td>
                 <td class="number">39.12%</td>
                 <td class="number">18</td>
                 <td>condolence dear x.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":neutral_face:">😐</span> :neutral_face:</td>
+                <td><a href="#neutral_face"><span class="emoji" role="img" aria-label=":neutral_face:">😐</span> :neutral_face:</a></td>
                 <td class="number">36.38%</td>
                 <td class="number">14</td>
                 <td>it&#39;d joking, ,</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label=":weary:">😩</span> :weary:</td>
+                <td><a href="#weary"><span class="emoji" role="img" aria-label=":weary:">😩</span> :weary:</a></td>
                 <td class="number">30.07%</td>
                 <td class="number">20</td>
                 <td>popeyes friday whyy.</td>
             </tr>
             <tr>
-                <td><span class="emoji" role="img" aria-label="None">🚫</span> None</td>
+                <td><a href="#on"><span class="emoji" role="img" aria-label="None">🚫</span> None</a></td>
                 <td class="number">2.33%</td>
                 <td class="number">21</td>
                 <td>its layered connelly.</td>
