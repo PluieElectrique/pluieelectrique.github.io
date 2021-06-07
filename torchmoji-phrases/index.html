@@ -49,8 +49,13 @@ th.sort-desc:after { content: " ▾"; position: absolute; padding-left: 3px; }
     <p>This is a collection of phrases for which <a href="https://github.com/huggingface/torchMoji">TorchMoji</a> confidently predicts a single emoji. For example, the phrase <code>i'll percent!!</code> gives a probability of 98.44% for <code>:100:</code> (<span class="emoji" role="img" aria-label=":100:">💯</span>). There are also phrases for which every emoji is predicted with low confidence (see "None" <span class="emoji" role="img" aria-label="None">🚫</span>). For example, the phrase <code>its layered connelly.</code> gives a probability of 2.33% or less for every emoji.</p>
     <p>The goal of these phrases is to understand which words are strongly associated with each emoji. The phrases might also be interesting inputs for systems that use TorchMoji embeddings.</p>
     <h2 id="methodology">Methodology</h2>
-    <p>These phrases were designed for compatibility with <a href="https://15.ai/">15.ai</a>'s emotional contextualizers. So, any token with disallowed characters was excluded (e.g. hashtags were excluded because <code>#</code> is not allowed). Similarly, 15.ai has a character limit of 200, so phrases were limited to 30 characters at most.</p>
-    <p>The <code>CUSTOM_UNKNOWN</code> and <code>CUSTOM_URL</code> tokens were arbitrarily chosen to be <code>zq</code> and <code>www.w</code>. The other custom tokens were excluded due to character restrictions.</p>
+    <p>These phrases were designed for compatibility with <a href="https://15.ai/">15.ai</a>'s emotional contextualizers. So:</p>
+    <ul>
+        <li>Some tokens (e.g. hashtags) are excluded because of character restrictions.</li>
+        <li>Phrases are 30 characters at most (to leave more room for the actual input).</li>
+        <li>Every phrase ends with punctuation (as a period will otherwise be added to the end of the phrase).</li>
+    </ul>
+    <p><code>zq</code> represents the <code>CUSTOM_UNKNOWN</code> token and <code>www.w</code> represents the <code>CUSTOM_URL</code> token. The other custom tokens were excluded due to character restrictions.</p>
     <p>The phrases were found by hill climbing, brute force, and heuristics (e.g. repeating the same word many times). There is definitely room for improvement with better strategies.</p>
     <p>The exact emojis and shortcodes used mostly follow TorchMoji's <a href="https://github.com/huggingface/torchMoji/blob/198f7d4e0711a7d3cd01968812af0121c54477f8/examples/text_emojize.py#L20-L32"><code>text_emojize.py</code></a> example, but some of the shortcodes are wrong (e.g. <code>:musical_note:</code> should actually be <code>:headphone:</code>). In those cases, the <a href="https://github.com/bfelbo/DeepMoji/blob/master/emoji_unicode.csv">original DeepMoji codepoints</a> are used instead. If the original codepoint is not a color emoji, then a similar looking color emoji is used instead (e.g. the white heart emoji <span class="emoji" role="img" aria-label=":white_heart:">🤍</span> is used instead of the white heart suit character ♡).</p>
     <h2 id="top-phrases">Top phrases</h2>
